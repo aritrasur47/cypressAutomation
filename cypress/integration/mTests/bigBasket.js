@@ -11,7 +11,6 @@ describe('Automating BigBasket Cart', function () {
 
         cy.get('.items').find('.clearfix').each(($el, index, $list) => {
             const vegName = $el.find('a.ng-binding').text();
-            //cy.log("this is vegname" + vegName);
             const isVegPresent = ['Ladies', 'Onion', 'Cucumber'].some((vegIteration) => vegName.toLowerCase().includes(vegIteration.toLowerCase()));
             //const isVegPresent = vegName.includes('Ladies');
             
@@ -21,7 +20,6 @@ describe('Automating BigBasket Cart', function () {
         })
         cy.wait(5000);
 
-        
         cy.get('.btn.hvr-fade').click();
         cy.get('.icon.svg-basket.svg-header.svg-basket-dim').trigger('mouseover');
         cy.wait(2000);
